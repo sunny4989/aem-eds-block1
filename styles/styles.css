@@ -226,7 +226,6 @@ button {
   border-radius: 999px;
   background: var(--gradient-brand);
   background-size: 200% 100%;
-  color: var(--c-bg);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-s);
   font-weight: 700;
