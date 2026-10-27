@@ -1,3 +1,4 @@
+/* Hero: full-bleed image with dark overlay, gradient headline, glass content panel */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,33 +6,113 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
-}
-
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  display: flex;
+  align-items: flex-end;
+  min-height: min(78vh, 680px);
+  padding: 120px 24px 64px;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .hero picture {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: -2;
 }
 
-.hero img {
-  object-fit: cover;
+.hero picture img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transform: scale(1.04);
+  animation: hero-zoom 18s ease-out both;
+}
+
+/* overlay: keeps text readable and blends into the page background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgb(11 20 36 / 30%) 0%, rgb(11 20 36 / 75%) 55%, var(--c-bg) 100%),
+    linear-gradient(90deg, rgb(11 20 36 / 85%) 0%, transparent 70%);
+}
+
+.hero > div {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.hero > div > div {
+  max-width: 760px;
+}
+
+.hero h1 {
+  margin: 0 0 0.4em;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  line-height: 1.08;
+}
+
+.hero p {
+  max-width: 640px;
+  color: #cfdbe8;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+/* eyebrow-style subtitle when it is the first paragraph after h1 */
+.hero h1 + p {
+  font-family: var(--mono-font-family);
+  font-size: var(--body-font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-teal);
+}
+
+/* CTA links in the hero become buttons even without the button decoration */
+.hero p:last-child a:any-link {
+  display: inline-flex;
+  margin: 8px 12px 0 0;
+  padding: 0.75em 1.4em;
+  border-radius: 999px;
+  background: var(--gradient-brand);
+  color: var(--c-bg);
+  font-weight: 700;
+  background-size: 200% 100%;
+  transition: transform 0.2s var(--ease), background-position 0.4s;
+}
+
+.hero p:last-child a:any-link + a:any-link {
+  background: rgb(255 255 255 / 6%);
+  border: 1px solid rgb(255 255 255 / 20%);
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+
+.hero p:last-child a:hover { transform: translateY(-2px); background-position: 100% 0; }
+
+/* decorative glowing orb */
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -120px;
+  bottom: -160px;
+  z-index: -1;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(20 184 166 / 35%), transparent 65%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+@keyframes hero-zoom {
+  from { transform: scale(1.12); }
+  to { transform: scale(1.04); }
 }
 
 @media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
+  .hero { padding: 160px 32px 96px; }
 }

@@ -1,20 +1,52 @@
+/* Footer: dark band with gradient top rule, centred links */
 footer {
-  background-color: var(--light-color);
+  position: relative;
+  margin-top: 96px;
+  background: linear-gradient(180deg, transparent, #070e1a 40%);
+  border-top: 1px solid var(--c-border);
   font-size: var(--body-font-size-xs);
+  color: var(--c-muted);
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  inset: -1px 10% auto;
+  height: 1px;
+  background: var(--gradient-brand);
 }
 
 footer .footer > div {
+  max-width: var(--content-width);
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 48px 24px 40px;
+  text-align: center;
 }
 
-footer .footer p {
-  margin: 0;
+footer .footer p { margin: 0.6em 0; }
+
+/* first line: name + tagline */
+footer .footer p:first-child {
+  font-family: var(--heading-font-family);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+footer .footer a:any-link { color: var(--c-muted); margin: 0 4px; }
+footer .footer a:hover { color: var(--c-teal); }
+
+/* last line: "Built on Edge Delivery..." as a pill */
+footer .footer p:last-child {
+  display: inline-block;
+  margin-top: 1.2em;
+  padding: 0.35em 1em;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  font-family: var(--mono-font-family);
+  font-size: 12px;
 }
 
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
-  }
+  footer .footer > div { padding: 56px 32px 48px; }
 }
