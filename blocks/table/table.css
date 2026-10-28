@@ -53,15 +53,18 @@
   white-space: nowrap;
 }
 
-.table thead th:first-child { left: 0; z-index: 3; }
+.table thead th:first-child {
+  left: 0;
+  z-index: 3;
+}
 
 .table tbody tr:nth-child(even) td { background: rgb(255 255 255 / 2%); }
-.table tbody tr:nth-child(even) td:first-child { background: #1a2b44; }
 
 .table tbody tr { transition: background 0.2s; }
 .table tbody tr:hover td { background: var(--c-teal-soft); }
-
 .table tbody tr:last-child td { border-bottom: 0; }
+
+.table tbody tr:nth-child(even) td:first-child { background: #1a2b44; }
 
 /* value highlighting for common comparison words */
 .table td p { margin: 0; }

@@ -40,7 +40,10 @@ header nav[aria-expanded='true'] {
   overflow-y: auto;
 }
 
-header nav a:any-link { color: var(--c-text); background: none; }
+header nav a:any-link {
+  color: var(--c-text);
+  background: none;
+}
 
 /* brand: name with a gradient dot */
 header nav .nav-brand { grid-area: brand; }
@@ -100,13 +103,26 @@ header nav .nav-hamburger-icon::after {
 }
 
 header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after { content: ''; position: absolute; }
+header nav .nav-hamburger-icon::after {
+  content: '';
+  position: absolute;
+}
+
 header nav .nav-hamburger-icon::before { top: -7px; }
+
 header nav .nav-hamburger-icon::after { top: 7px; }
 
 header nav[aria-expanded='true'] .nav-hamburger-icon { background: transparent; }
-header nav[aria-expanded='true'] .nav-hamburger-icon::before { top: 0; transform: rotate(45deg); }
-header nav[aria-expanded='true'] .nav-hamburger-icon::after { top: 0; transform: rotate(-45deg); }
+
+header nav[aria-expanded='true'] .nav-hamburger-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+header nav[aria-expanded='true'] .nav-hamburger-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
 
 /* sections */
 header nav .nav-sections {
@@ -128,7 +144,10 @@ header nav .nav-sections ul {
   font-size: var(--body-font-size-s);
 }
 
-header nav .nav-sections ul > li { margin: 0; font-weight: 600; }
+header nav .nav-sections ul > li {
+  margin: 0;
+  font-weight: 600;
+}
 header nav .nav-sections ul > li > ul { margin-top: 0; }
 header nav .nav-sections ul > li > ul > li { font-weight: 400; }
 
@@ -140,7 +159,11 @@ header nav .nav-sections a:any-link {
 header nav .nav-sections a:hover { color: var(--c-teal); }
 
 /* tools: CTA button */
-header nav .nav-tools { grid-area: tools; display: flex; align-items: center; }
+header nav .nav-tools {
+  grid-area: tools;
+  display: flex;
+  align-items: center;
+}
 
 header nav .nav-tools p { margin: 0; }
 
@@ -162,9 +185,15 @@ header nav .nav-tools a:any-link {
     padding: 0 32px;
   }
 
-  header nav[aria-expanded='true'] { min-height: 0; overflow: visible; }
+  header nav[aria-expanded='true'] {
+    min-height: 0;
+    overflow: visible;
+  }
 
-  header nav .nav-hamburger { display: none; visibility: hidden; }
+  header nav .nav-hamburger {
+    display: none;
+    visibility: hidden;
+  }
 
   header nav .nav-sections {
     display: block;
@@ -252,7 +281,14 @@ header nav .nav-tools a:any-link {
   }
 
   @keyframes drop-in {
-    from { opacity: 0; transform: translateY(-6px); }
-    to { opacity: 1; transform: none; }
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
