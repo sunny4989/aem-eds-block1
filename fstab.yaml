@@ -1,2 +1,4 @@
 mountpoints:
-  /: https://drive.google.com/drive/u/0/folders/1X6to9pwTvFyyDvgKKEo8UIDUEO0EplRy
+  /:
+    url: https://content.da.live/sunny4989/aem-eds-block1/
+    type: markup
