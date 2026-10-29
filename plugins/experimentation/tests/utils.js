@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { expect } from '@playwright/test';
 
 async function waitForNamespace(page, namespace) {

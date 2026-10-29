@@ -84,14 +84,17 @@
   transition: transform 0.2s var(--ease), background-position 0.4s;
 }
 
+.hero p:last-child a:hover {
+  transform: translateY(-2px);
+  background-position: 100% 0;
+}
+
 .hero p:last-child a:any-link + a:any-link {
   background: rgb(255 255 255 / 6%);
   border: 1px solid rgb(255 255 255 / 20%);
   color: #fff;
   backdrop-filter: blur(6px);
 }
-
-.hero p:last-child a:hover { transform: translateY(-2px); background-position: 100% 0; }
 
 /* decorative glowing orb */
 .hero::after {

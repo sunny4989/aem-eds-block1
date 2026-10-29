@@ -94,7 +94,10 @@ body {
 
 body.appear { display: block; }
 
-::selection { background: var(--c-teal); color: var(--c-bg); }
+::selection {
+  background: var(--c-teal);
+  color: var(--c-bg);
+}
 
 header { height: var(--nav-height); }
 
@@ -138,7 +141,10 @@ h3 { font-size: var(--heading-font-size-m); }
 h4 { font-size: var(--heading-font-size-s); }
 h5, h6 { font-size: var(--heading-font-size-xs); }
 
-p, dl, ol, ul, pre, blockquote { margin-top: 0.8em; margin-bottom: 0.8em; }
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
 
 strong { color: #fff; }
 
@@ -147,7 +153,12 @@ ul, ol { padding-left: 1.3em; }
 li { margin: 0.35em 0; }
 
 ul li::marker { color: var(--c-teal); }
-ol li::marker { color: var(--c-orange); font-weight: 700; font-family: var(--mono-font-family); }
+
+ol li::marker {
+  color: var(--c-orange);
+  font-weight: 700;
+  font-family: var(--mono-font-family);
+}
 
 hr {
   margin: 3rem 0;
@@ -168,17 +179,16 @@ a:any-link {
   overflow-wrap: break-word;
 }
 
-a:hover { color: var(--c-orange); background-size: 100% 1px; }
-
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--c-orange);
-  outline-offset: 3px;
-  border-radius: 4px;
+a:hover {
+  color: var(--c-orange);
+  background-size: 100% 1px;
 }
 
 /* ---------- Code ---------- */
-code, pre { font-family: var(--mono-font-family); font-size: 0.85em; }
+code, pre {
+  font-family: var(--mono-font-family);
+  font-size: 0.85em;
+}
 
 :not(pre) > code {
   padding: 0.15em 0.45em;
@@ -236,6 +246,13 @@ button {
   transition: transform 0.2s var(--ease), box-shadow 0.2s, background-position 0.4s;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--c-orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 a.button:hover,
 button:hover {
   color: var(--c-bg);
@@ -252,9 +269,16 @@ button.secondary {
   box-shadow: none;
 }
 
-a.button.secondary:hover { border-color: var(--c-teal); color: var(--c-teal); }
+a.button.secondary:hover {
+  border-color: var(--c-teal);
+  color: var(--c-teal);
+}
 
-button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
 
 /* second button in a paragraph looks secondary automatically */
 .button-container + .button-container a.button,
@@ -281,10 +305,21 @@ main .default-content-wrapper > p > picture img {
 }
 
 /* SVG architecture diagrams scale crisply */
-main img[src$='.svg'] { width: 100%; background: var(--c-bg-2); }
+main img[src$='.svg'] {
+  width: 100%;
+  background: var(--c-bg-2);
+}
 
-.icon { display: inline-block; width: 24px; height: 24px; }
-.icon img { width: 100%; height: 100%; }
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.icon.icon img {
+  width: 100%;
+  height: 100%;
+}
 
 /* ---------- Sections and layout ---------- */
 main > .section { margin: 56px 0; }
@@ -300,6 +335,15 @@ main > .section > .default-content-wrapper { max-width: var(--prose-width); }
 
 main > .section:first-of-type { margin-top: 0; }
 
+/* "Pattern 1 of 4 · Back" line after an h1 */
+main h1 + p {
+  color: var(--c-muted);
+  font-family: var(--mono-font-family);
+  font-size: var(--body-font-size-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 /* breadcrumb: a first paragraph that begins with a link to /usecase/ */
 main .default-content-wrapper > p:first-child:has(> a[href*='/usecase']) {
   display: inline-flex;
@@ -314,15 +358,6 @@ main .default-content-wrapper > p:first-child:has(> a[href*='/usecase']) {
   color: var(--c-muted);
 }
 
-/* "Pattern 1 of 4 · Back" line after an h1 */
-main h1 + p {
-  color: var(--c-muted);
-  font-family: var(--mono-font-family);
-  font-size: var(--body-font-size-xs);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 /* "When NOT to use" gets a warning panel */
 main h2[id^='when-not-to-use'] + ul {
   padding: 1.1em 1.4em 1.1em 2.6em;
@@ -332,7 +367,10 @@ main h2[id^='when-not-to-use'] + ul {
   background: var(--c-orange-soft);
 }
 
-main h2[id^='when-not-to-use'] + ul li::marker { content: '✕  '; color: var(--c-orange); }
+main h2[id^='when-not-to-use'] + ul li::marker {
+  content: '✕  ';
+  color: var(--c-orange);
+}
 
 /* "When to use" gets a positive panel */
 main h2[id='when-to-use'] + ul {
@@ -343,7 +381,10 @@ main h2[id='when-to-use'] + ul {
   background: var(--c-teal-soft);
 }
 
-main h2[id='when-to-use'] + ul li::marker { content: '✓  '; color: var(--c-teal); }
+main h2[id='when-to-use'] + ul li::marker {
+  content: '✓  ';
+  color: var(--c-teal);
+}
 
 /* section style variants authors can set via Section Metadata (Style: highlight | light) */
 main .section.highlight {
@@ -352,7 +393,10 @@ main .section.highlight {
   border-block: 1px solid var(--c-border);
 }
 
-main .section.light { background: var(--c-surface); padding: 48px 0; }
+main .section.light {
+  background: var(--c-surface);
+  padding: 48px 0;
+}
 
 /* ---------- Scroll reveal (no JS needed; supported browsers only) ---------- */
 @supports (animation-timeline: view()) {
@@ -363,8 +407,15 @@ main .section.light { background: var(--c-surface); padding: 48px 0; }
   }
 
   @keyframes reveal {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: none; }
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
@@ -385,14 +436,25 @@ main .section.light { background: var(--c-surface); padding: 48px 0; }
 }
 
 @media (width < 600px) {
-  :root { --body-font-size-m: 16px; --body-font-size-s: 15px; }
+  :root {
+    --body-font-size-m: 16px;
+    --body-font-size-s: 15px;
+  }
 
   pre { font-size: 0.78em; }
 }
 
 /* ---------- Print ---------- */
 @media print {
-  body { background: #fff; color: #000; }
-  h1 { -webkit-text-fill-color: initial; color: #000; }
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  h1 {
+    -webkit-text-fill-color: initial;
+    color: #000;
+  }
+
   header, footer { display: none; }
 }

@@ -33,7 +33,10 @@ footer .footer p:first-child {
   color: #fff;
 }
 
-footer .footer a:any-link { color: var(--c-muted); margin: 0 4px; }
+footer .footer a:any-link {
+  color: var(--c-muted);
+  margin: 0 4px;
+}
 footer .footer a:hover { color: var(--c-teal); }
 
 /* last line: "Built on Edge Delivery..." as a pill */

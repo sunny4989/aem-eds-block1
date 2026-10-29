@@ -60,7 +60,10 @@
 }
 
 /* diagrams should not be cropped */
-.cards .cards-card-image img[src$='.svg'] { object-fit: contain; padding: 8px; }
+.cards .cards-card-image img[src$='.svg'] {
+  object-fit: contain;
+  padding: 8px;
+}
 
 .cards > ul > li:hover .cards-card-image img { transform: scale(1.06); }
 
@@ -84,6 +87,12 @@
   font-size: var(--body-font-size-s);
 }
 
+/* last paragraph = CTA pinned to the bottom with an animated arrow */
+.cards .cards-card-body p:last-child {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
 /* meta line such as "4 patterns · Personalisation" */
 .cards .cards-card-body p:has(+ p:last-child) {
   font-family: var(--mono-font-family);
@@ -91,12 +100,6 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--c-orange);
-}
-
-/* last paragraph = CTA pinned to the bottom with an animated arrow */
-.cards .cards-card-body p:last-child {
-  margin-top: auto;
-  padding-top: 14px;
 }
 
 .cards .cards-card-body p:last-child a:any-link {
